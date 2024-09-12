@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.block {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: inherit; /* Ensures that the block uses inherited text colors */
+}
+
+/* Hover effect on block */
+.block:hover {
+    background-color: #f7f7f7;
+    border-color: #aaa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.block-title {
+    cursor: pointer;
+}
+
+.block-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.block-content p {
+    margin: 0;
+}
+
+.block-content.expanded {
+    max-height: 200px; /* Adjust height based on content */
+}
+
+a.block {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep the color the same as the rest of the text */
+}
