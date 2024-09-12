@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Header and Footer</title>
+    <title>Dominic Reichl</title>
+    <link rel="icon" href="icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
@@ -14,7 +15,6 @@
         <div class="header-title"><a href="#home">Dominic Reichl</a></div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -24,9 +24,9 @@
     <!-- Main Content Section -->
     <div class="container">
         <!-- Block 1 -->
-        <div class="block" onclick="toggleContent(1)">
-            <div class="block-title">
-                <h2>Block 1 Title</h2>
+        <div class="block">
+            <div class="block-title" onclick="toggleContent(1)">
+                <h2>Machine Learning</h2>
             </div>
             <div class="block-content" id="content-1">
                 <p>This is the content of Block 1. It will be revealed when the block is clicked.</p>
@@ -34,9 +34,9 @@
         </div>
 
         <!-- Block 2 -->
-        <div class="block" onclick="toggleContent(2)">
-            <div class="block-title">
-                <h2>Block 2 Title</h2>
+        <div class="block">
+            <div class="block-title" onclick="toggleContent(2)">
+                <h2>Cognitive Science</h2>
             </div>
             <div class="block-content" id="content-2">
                 <p>This is the content of Block 2. It will be revealed when the block is clicked.</p>
@@ -44,9 +44,9 @@
         </div>
 
         <!-- Block 3 -->
-        <div class="block" onclick="toggleContent(3)">
-            <div class="block-title">
-                <h2>Block 3 Title</h2>
+        <div class="block">
+            <div class="block-title" onclick="toggleContent(3)">
+                <h2>Philosophy</h2>
             </div>
             <div class="block-content" id="content-3">
                 <p>This is the content of Block 3. It will be revealed when the block is clicked.</p>

@@ -19,21 +19,25 @@ body {
 header {
     background-color: black; /* Black background */
     color: white; /* White text */
-    padding: 50px 200px; /* Reduced padding for a more compact look */
+    padding: 50px 10%; /* Reduced padding for a more compact look */
     display: flex;
     align-items: center; /* Vertically align text */
     justify-content: space-between; /* Space between items */
 }
 
-.header-title {
+.header-title a {
     font-size: 24px; /* Larger font for the title */
-    text-transform: uppercase; /* Uppercase letters */
+    text-transform: uppercase;
+    font-weight: bold;
+    color: inherit; /* Inherit the text color from the parent */
+    text-decoration: none; /* Remove underline */
 }
 
 header nav ul {
     list-style-type: none;
     padding: 0;
     display: flex; /* Align items in a row */
+    text-transform: uppercase;
 }
 
 header nav ul li {
@@ -59,32 +63,38 @@ header nav ul li a:hover {
 .container {
     flex-grow: 1;
     width: 100%; /* Full width */
-    padding: 0 200px;
+    padding: 0 10%;
 }
 
 /* Block Styles */
 .block {
     display: block;
-    background-color: #333; /* Dark gray background for blocks */
-    border: 1px solid #444; /* Darker border */
+    background-color: black; /* Dark gray background for blocks */
     margin: 10px 0;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     cursor: pointer; /* Indicate that the block is clickable */
-    border-radius: 8px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-/* Hover effect on block */
-.block:hover {
-    background-color: #444; /* Slightly lighter gray on hover */
-    border-color: white; /* White border on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+.block-title {
+    cursor: pointer;
+    padding: 2% 0; /* Full-width footer */
+    box-shadow: 16px;
+}
+
+.block-title:hover {
+    background-color: #9f0000ff;
+    border-color: white;
+    border-radius: 16px;
 }
 
 /* Block Content */
 .block-content {
     max-height: 0;
+    color: white;
     overflow: hidden;
     transition: max-height 0.3s ease;
 }
@@ -96,7 +106,7 @@ header nav ul li a:hover {
 /* Footer Styles */
 footer {
     background-color: black; /* Black background */
-    color: white; /* White text */
+    color: rgb(153, 120, 120); /* White text */
     padding: 10px 20px; /* Full-width footer */
     text-align: center;
 }
