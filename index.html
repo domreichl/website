@@ -3,41 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expandable Blocks</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Website with Header and Footer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-title"><a href="#home">Dominic Reichl</a></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
     <div class="container">
         <!-- Block 1 -->
-        <a href="javascript:void(0);" class="block" onclick="toggleContent(1)">
+        <div class="block" onclick="toggleContent(1)">
             <div class="block-title">
                 <h2>Block 1 Title</h2>
             </div>
-            <div class="block-content" id="content-1" onclick="event.stopPropagation();">
+            <div class="block-content" id="content-1">
                 <p>This is the content of Block 1. It will be revealed when the block is clicked.</p>
             </div>
-        </a>
+        </div>
 
         <!-- Block 2 -->
-        <a href="javascript:void(0);" class="block" onclick="toggleContent(2)">
+        <div class="block" onclick="toggleContent(2)">
             <div class="block-title">
                 <h2>Block 2 Title</h2>
             </div>
-            <div class="block-content" id="content-2" onclick="event.stopPropagation();">
+            <div class="block-content" id="content-2">
                 <p>This is the content of Block 2. It will be revealed when the block is clicked.</p>
             </div>
-        </a>
+        </div>
 
         <!-- Block 3 -->
-        <a href="javascript:void(0);" class="block" onclick="toggleContent(3)">
+        <div class="block" onclick="toggleContent(3)">
             <div class="block-title">
                 <h2>Block 3 Title</h2>
             </div>
-            <div class="block-content" id="content-3" onclick="event.stopPropagation();">
+            <div class="block-content" id="content-3">
                 <p>This is the content of Block 3. It will be revealed when the block is clicked.</p>
             </div>
-        </a>
+        </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
