@@ -30,9 +30,9 @@
                 <div class="block-content" id="content-1">
                     <h2>Machine Learning</h2>
                         <ul>
-                            <li><a href="#link1">Stock Price Prediction</a></li>
-                            <li><a href="#link3">Natural Language Processing</a></li>
-                            <li><a href="#link2">Computer Vision</a></li>
+                            <li><a href="#stock-price-prediction", id="tsf">Stock Price Prediction</a></li>
+                            <li><a href="#natural-language-processing", id="nlp">Natural Language Processing</a></li>
+                            <li><a href="#computer-vision", id="cv">Computer Vision</a></li>
                         </ul>
                     </div>
             </div>
@@ -77,6 +77,15 @@
         $(document).ready(function() {
           $('#about').click(function() {
             $('#content').load('about.html');
+          });
+          $('#tsf').click(function() {
+            $('#content').load('ml/stock_price_prediction.html')
+          });
+          $('#nlp').click(function() {
+            $('#content').load('placeholder.html')
+          });
+          $('#cv').click(function() {
+            $('#content').load('placeholder.html')
           });
         });
     </script>

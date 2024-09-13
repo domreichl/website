@@ -126,6 +126,15 @@ header nav ul li a:hover {
     background-color: transparent;
 }
 
+.content {
+    padding: 0 20%;
+    text-align: center;
+}
+
+.content a {
+    text-decoration: none;
+}
+
 .about-content {
     display: flex;
     justify-content: space-between;
@@ -141,6 +150,17 @@ header nav ul li a:hover {
 
 .info-item h2 {
     margin-bottom: 10px;
+}
+
+.info-item a {
+    text-decoration: none;
+    color: #9f0000ff;
+}
+
+.info-item a:hover {
+    text-decoration: none;
+    color: rgb(214, 0, 0);
+    font-weight: bold;
 }
 
 .image-links {
