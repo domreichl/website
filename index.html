@@ -6,66 +6,79 @@
     <title>Dominic Reichl</title>
     <link rel="icon" href="images/icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Cabin%3A400%2C700%2C600" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="header-title"><a href="/">Dominic Reichl</a></div>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about", id="about">About</a></li>
+                <li><a href="https://www.linkedin.com/in/dominic-reichl-754673220/" target="_blank">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <!-- Main Content Section -->
-    <div class="container">
-        <div class="block">
-            <div class="block-title" onclick="toggleContent(1)">
-                <img src="images/machine_learning.jpg" alt="Machine Learning">
+
+    <main id="content">
+        <div class="container">
+            <div class="block">
+                <div class="block-title" onclick="toggleContent(1)">
+                    <img src="images/machine_learning.jpg" alt="Machine Learning">
+                </div>
+                <div class="block-content" id="content-1">
+                    <h2>Machine Learning</h2>
+                        <ul>
+                            <li><a href="#link1">Stock Price Prediction</a></li>
+                            <li><a href="#link3">Natural Language Processing</a></li>
+                            <li><a href="#link2">Computer Vision</a></li>
+                        </ul>
+                    </div>
             </div>
-            <div class="block-content" id="content-1">
-                <h2>Machine Learning</h2>
+
+            <div class="block">
+                <div class="block-title" onclick="toggleContent(2)">
+                    <img src="images/cognitive_science.jpg" alt="Cognitive Science">
+                </div>
+                <div class="block-content" id="content-2">
+                <h2>Cognitive Science</h2>
                     <ul>
-                        <li><a href="#link1">Stock Price Prediction</a></li>
-                        <li><a href="#link3">Natural Language Processing</a></li>
-                        <li><a href="#link2">Computer Vision</a></li>
+                        <li><a href="#link1">The Bayesian Brain</a></li>
+                        <li><a href="#link2">Placebo Effects Explained</a></li>
+                        <li><a href="#link3">Emotions as Predictions</a></li>
                     </ul>
                 </div>
-        </div>
+            </div>
 
-        <div class="block">
-            <div class="block-title" onclick="toggleContent(2)">
-                <img src="images/cognitive_science.jpg" alt="Cognitive Science">
-            </div>
-            <div class="block-content" id="content-2">
-            <h2>Cognitive Science</h2>
-                <ul>
-                    <li><a href="#link1">The Bayesian Brain</a></li>
-                    <li><a href="#link2">Placebo Effects Explained</a></li>
-                    <li><a href="#link3">Emotions as Predictions</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="block">
-            <div class="block-title" onclick="toggleContent(3)">
-                <img src="images/philosophy.jpg" alt="Philosophy">
-            </div>
-            <div class="block-content" id="content-3">
-                <h2>Philosophy</h2>
-                <ul>
-                    <li><a href="#glossary">Glossary</a></li>
-                    <li><a href="#concepts">Concepts</a></li>
-                    <li><a href="#principles">Principles</a></li>
-                </ul>
+            <div class="block">
+                <div class="block-title" onclick="toggleContent(3)">
+                    <img src="images/philosophy.jpg" alt="Philosophy">
+                </div>
+                <div class="block-content" id="content-3">
+                    <h2>Philosophy</h2>
+                    <ul>
+                        <li><a href="#glossary">Glossary</a></li>
+                        <li><a href="#concepts">Concepts</a></li>
+                        <li><a href="#principles">Principles</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <script src="script.js"></script>
+    <script>
+        function toggleContent(blockNumber) {
+            var content = document.getElementById('content-' + blockNumber);
+            content.classList.toggle('expanded');
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+          $('#about').click(function() {
+            $('#content').load('about.html');
+          });
+        });
+    </script>
 </body>
 </html>

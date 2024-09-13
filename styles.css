@@ -126,6 +126,44 @@ header nav ul li a:hover {
     background-color: transparent;
 }
 
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20%;
+}
+
+.info-item {
+    flex: 1 1 33%;
+    margin: 0px;
+    text-align: center;
+}
+
+.info-item h2 {
+    margin-bottom: 10px;
+}
+
+.image-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 70px;
+    height: auto;
+    margin: 0 2px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.social-icon:hover {
+    border-color: white;
+    background-color: transparent;
+    transform: scale(1.2);
+}
+
 @media (max-width: 768px) {
     header nav ul li {
         margin: 10px 0;
