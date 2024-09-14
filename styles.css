@@ -30,7 +30,7 @@ h3 {
 
 body p {
     font-size: 20px;
-    padding-top: 10px;
+    padding-top: 1%;
 }
 
 header {
@@ -60,7 +60,7 @@ header nav ul {
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin: 0 3%;
 }
 
 header nav ul li a {
@@ -85,12 +85,12 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 1% 0;
 }
 
 th, td {
     border: 1px solid black;
-    padding: 10px;
+    padding: 1%;
     text-align: center;
     width: 50%;
 }
@@ -105,7 +105,7 @@ th {
     padding: 0 10%;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1%;
     justify-content: space-between;
     background-color: black;
     color: white;
@@ -113,14 +113,13 @@ th {
 
 .block {
     background-color: black;
-    padding: 20px;
-    margin: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 1%;
+    margin: 1% 0;
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
-    flex: 1 1 calc(33.333% - 20px);
+    flex: 1 1 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,7 +140,6 @@ th {
 .block-title {
     cursor: pointer;
     padding: 2% 0;
-    box-shadow: 16px;
 }
 
 .block-content {
@@ -157,7 +155,7 @@ th {
 
 .block-content a {
     list-style: disc;
-    padding: 10px;
+    padding: 3%;
     display: block;
     color: white;
     text-transform: none;
@@ -201,7 +199,7 @@ th {
 .blog-content img {
     height: auto;
     max-width: 80%;
-    margin: 20px 0;
+    margin: 1% 0;
 }
 
 .blog-content a {
@@ -227,12 +225,11 @@ th {
 
 .info-item {
     flex: 1 1 33%;
-    margin: 0px;
     text-align: center;
 }
 
 .info-item h2 {
-    margin-bottom: 10px;
+    margin-bottom: 2%;
 }
 
 .info-item a {
@@ -249,7 +246,7 @@ th {
 .image-links {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 3%;
 }
 
 .social-icon {
@@ -271,6 +268,34 @@ th {
     header nav ul li {
         margin: 10px 0;
     }
+
+    main {
+        padding-top: 15%;
+    }
+
+    .blog-content {
+        padding: 20% 5% 20% 5%;
+        text-align: left;
+        background-color: white;
+        color: black;
+    }
+
+    .blog-content-centered {
+        padding: 20% 5% 20% 5%;
+        text-align: center;
+        background-color: white;
+        color: black;
+    }
+
+    .page-content {
+        padding: 10% 5%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: black;
+        color: white;
+    }
+
     .block {
         flex: 1 1 100%;
     }
