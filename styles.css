@@ -191,6 +191,22 @@ th {
     padding: 1% 0 1% 4%;
 }
 
+.blog-content img {
+    height: auto;
+    max-width: 80%;
+    margin: 20px 0;
+}
+
+.blog-content a {
+    text-decoration: none;
+    color: #9f0000ff;
+}
+.blog-content a:hover {
+    text-decoration: none;
+    color: rgb(214, 0, 0);
+    font-weight: bold;
+}
+
 .blog-content-centered {
     text-align: center;
     background-color: white;

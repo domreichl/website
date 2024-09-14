@@ -44,9 +44,9 @@
                 <div class="block-content" id="content-2">
                 <h2>Cognitive Science</h2>
                     <ul>
-                        <li><a href="#link1">The Bayesian Brain</a></li>
-                        <li><a href="#link2">Placebo Effects Explained</a></li>
-                        <li><a href="#link3">Emotions as Predictions</a></li>
+                        <li><a href="#the-bayesian-brain", id="bayesianBrain">The Bayesian Brain</a></li>
+                        <li><a href="#placebo-effects", id="placeboEffects">Placebo Effects Explained</a></li>
+                        <li><a href="#emotions-as-predictions", id="emotionsAsPredictions">Emotions as Predictions</a></li>
                     </ul>
                 </div>
             </div>
@@ -95,6 +95,15 @@
           });
           $('#principles').click(function() {
             $('#content').load('pages/philo/principles.html')
+          });
+          $('#bayesianBrain').click(function() {
+            $('#content').load('pages/cogsci/the_bayesian_brain.html')
+          });
+          $('#placeboEffects').click(function() {
+            $('#content').load('pages/cogsci/placebo_effects_explained.html')
+          });
+          $('#emotionsAsPredictions').click(function() {
+            $('#content').load('pages/cogsci/emotions_as_predictions.html')
           });
         });
     </script>
