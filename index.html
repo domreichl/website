@@ -58,7 +58,7 @@
                 <div class="block-content" id="content-3">
                     <h2>Philosophy</h2>
                     <ul>
-                        <li><a href="#glossary">Glossary</a></li>
+                        <li><a href="#glossary", id="glossary">Glossary</a></li>
                         <li><a href="#concepts">Concepts</a></li>
                         <li><a href="#principles">Principles</a></li>
                     </ul>
@@ -79,13 +79,16 @@
             $('#content').load('about.html');
           });
           $('#tsf').click(function() {
-            $('#content').load('ml/stock_price_prediction.html')
+            $('#content').load('pages/ml/stock_price_prediction.html')
           });
           $('#nlp').click(function() {
             $('#content').load('placeholder.html')
           });
           $('#cv').click(function() {
             $('#content').load('placeholder.html')
+          });
+          $('#glossary').click(function() {
+            $('#content').load('pages/philo/glossary.html')
           });
         });
     </script>

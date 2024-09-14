@@ -4,13 +4,17 @@
     box-sizing: border-box;
     background-color: black;
     color: white;
-}
 
 body {
     font-family: 'Cabin', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+body p {
+    font-size: 20px;
+    padding-top: 10px;
 }
 
 header {
