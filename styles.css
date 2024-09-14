@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black;
-    color: white;
 }
 
 body {
@@ -11,6 +9,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1% 0 1% 0;
+
 }
 
 body p {
@@ -19,10 +25,14 @@ body p {
 }
 
 header {
-    padding: 50px 10%;
+    position: fixed;
+    min-width: 100%;
+    padding: 3% 10% 3% 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: black;
+    color: white;
 }
 
 .header-title a {
@@ -59,6 +69,10 @@ header nav ul li a:hover {
     background-color: transparent;
 }
 
+main {
+    padding-top: 7%;
+}
+
 .container {
     flex-grow: 1;
     width: 100%;
@@ -67,6 +81,8 @@ header nav ul li a:hover {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+    background-color: black;
+    color: white;
 }
 
 .block {
@@ -102,7 +118,6 @@ header nav ul li a:hover {
     box-shadow: 16px;
 }
 
-/* Block Content */
 .block-content {
     max-height: 0;
     color: white;
@@ -131,20 +146,44 @@ header nav ul li a:hover {
     background-color: transparent;
 }
 
-.content {
-    padding: 0 20%;
-    text-align: center;
+.page-content {
+    padding: 1% 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
 }
 
-.content a {
+.page-content a {
+    color: white;
     text-decoration: none;
 }
 
-.about-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0 20%;
+.blog-content {
+    padding: 1% 10%;
+    text-align: left;
+    background-color: white;
+    color: black;
+}
+
+.blog-content h2 {
+    padding-top: 2%;
+}
+
+.blog-content ul {
+    font-size: 18px;
+    padding: 1% 20% 1% 4%;
+}
+
+.blog-content-centered {
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.blog-content-centered h2 {
+    padding: 1% 0 0 0;
 }
 
 .info-item {
