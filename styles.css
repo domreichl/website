@@ -17,6 +17,17 @@ h1 {
     text-transform: uppercase;
 }
 
+h2 {
+    font-size: 28px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+h3 {
+    font-size: 24px;
+    padding-top: 2%;
+}
+
 body p {
     font-size: 20px;
     padding-top: 10px;
@@ -182,10 +193,6 @@ th {
     color: black;
 }
 
-.blog-content h2 {
-    padding-top: 2%;
-}
-
 .blog-content ul {
     font-size: 18px;
     padding: 1% 0 1% 4%;
@@ -208,6 +215,7 @@ th {
 }
 
 .blog-content-centered {
+    padding: 2% 20% 2% 20%;
     text-align: center;
     background-color: white;
     color: black;
