@@ -45,3 +45,15 @@ window.onpopstate = function(event) {
         loadPage('/home.html');  // Default to home page if no state is present
     }
 };
+
+// Handle refresh
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = '';
+});
+
+document.addEventListener('touchmove', function (event) {
+    if (window.scrollY === 0 && event.touches[0].clientY > 0) {
+        event.preventDefault();
+    }
+}, { passive: false });
