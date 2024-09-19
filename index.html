@@ -7,105 +7,21 @@
     <link rel="icon" href="images/icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Cabin%3A400%2C700%2C600" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="header-title"><a href="/">Dominic Reichl</a></div>
+        <div class="header-title"><a href="home.html", onclick="navigate('/home.html'); return false;">Dominic Reichl</a></div>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#about", id="about">About</a></li>
+                <li><a href="home.html", onclick="navigate('/home.html'); return false;">Home</a></li>
+                <li><a href="about.html", onclick="navigate('/about.html'); return false;">About</a></li>
                 <li><a href="https://www.linkedin.com/in/dominic-reichl-754673220/" target="_blank">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="content">
-        <div class="container">
-            <div class="block">
-                <div class="block-title" onclick="toggleContent(1)">
-                    <img src="images/machine_learning.jpg" alt="Machine Learning">
-                </div>
-                <div class="block-content" id="content-1">
-                    <h2>Machine Learning</h2>
-                        <ul>
-                            <li><a href="#ml/stock-price-prediction", id="tsf">Stock Price Prediction</a></li>
-                            <li><a href="#ml/language-processing", id="nlp">Natural Language Processing</a></li>
-                            <li><a href="#ml/computer-vision", id="cv">Computer Vision</a></li>
-                        </ul>
-                    </div>
-            </div>
-
-            <div class="block">
-                <div class="block-title" onclick="toggleContent(2)">
-                    <img src="images/cognitive_science.jpg" alt="Cognitive Science">
-                </div>
-                <div class="block-content" id="content-2">
-                <h2>Cognitive Science</h2>
-                    <ul>
-                        <li><a href="#cogsci/brain", id="bayesianBrain">The Bayesian Brain</a></li>
-                        <li><a href="#cogsci/placebo", id="placeboEffects">Placebo Effects Explained</a></li>
-                        <li><a href="#cogsci/emotions", id="emotionsAsPredictions">Emotions as Predictions</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="block">
-                <div class="block-title" onclick="toggleContent(3)">
-                    <img src="images/philosophy.jpg" alt="Philosophy">
-                </div>
-                <div class="block-content" id="content-3">
-                    <h2>Philosophy</h2>
-                    <ul>
-                        <li><a href="#philo/glossary", id="glossary">Glossary</a></li>
-                        <li><a href="#philo/concepts", id="concepts">Concepts</a></li>
-                        <li><a href="#philo/principles", id="principles">Principles</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </main>
-
-    <script>
-        function toggleContent(blockNumber) {
-            var content = document.getElementById('content-' + blockNumber);
-            content.classList.toggle('expanded');
-        }
-    </script>
-    <script>
-        $(document).ready(function() {
-          $('#about').click(function() {
-            $('#content').load('about.html');
-          });
-          $('#tsf').click(function() {
-            $('#content').load('pages/ml/stock_price_prediction.html')
-          });
-          $('#nlp').click(function() {
-            $('#content').load('placeholder.html')
-          });
-          $('#cv').click(function() {
-            $('#content').load('placeholder.html')
-          });
-          $('#glossary').click(function() {
-            $('#content').load('pages/philo/glossary.html')
-          });
-          $('#concepts').click(function() {
-            $('#content').load('pages/philo/concepts.html')
-          });
-          $('#principles').click(function() {
-            $('#content').load('pages/philo/principles.html')
-          });
-          $('#bayesianBrain').click(function() {
-            $('#content').load('pages/cogsci/the_bayesian_brain.html')
-          });
-          $('#placeboEffects').click(function() {
-            $('#content').load('pages/cogsci/placebo_effects_explained.html')
-          });
-          $('#emotionsAsPredictions').click(function() {
-            $('#content').load('pages/cogsci/emotions_as_predictions.html')
-          });
-        });
-    </script>
 </body>
 </html>
