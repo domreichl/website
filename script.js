@@ -51,3 +51,25 @@ window.addEventListener('beforeunload', function (e) {
     e.preventDefault();
     e.returnValue = '';
 });
+
+async function runPython() {
+    const inputValue = document.getElementById('userInput').value;
+    try {
+        const response = await fetch('https://dominicreichl.com/app/run-python', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ input_value: inputValue }),
+        });
+        const result = await response.json();
+
+        if (response.ok) {
+            document.getElementById('result').textContent = result.result;
+        } else {
+            document.getElementById('result').textContent = result.error;
+        }
+    } catch (error) {
+        document.getElementById('result').textContent = 'Error: ' + error.message;
+    }
+}
