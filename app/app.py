@@ -13,12 +13,7 @@ def get_reply_from_llm(concept: str, token: str) -> str:
         token=Secret.from_token(token),
     )
     result = generator.run(
-        prompt=f"""Does the following string contain a philosophical concept?
-            ---
-            String: {concept}
-            ---
-            Answer with 'yes' or 'no' only.
-            """,
+        prompt=f"Is the following string a philosophical concept? String: {concept}. Answer with 'yes' or 'no' only. Answer: ",
         generation_kwargs={"max_new_tokens": 8},
     )
     reply = result["replies"][0]
@@ -33,8 +28,7 @@ def get_reply_from_llm(concept: str, token: str) -> str:
             .replace('"', "")
             .replace("“", "")
             .lstrip(string.whitespace)
-            + "."
-        )
+        ) + "."
     else:
         reply = f"'{concept}' is not a philosophical concept."
     return reply
