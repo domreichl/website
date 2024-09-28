@@ -1,0 +1,3 @@
+flask
+haystack-ai
+huggingface_hub
