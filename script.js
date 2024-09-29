@@ -55,7 +55,7 @@ window.addEventListener('beforeunload', function (e) {
 async function runPython() {
     const inputValue = document.getElementById('userInput').value;
     try {
-        const response = await fetch('https://dominicreichl.com/app/run-python', {
+        const response = await fetch('https://dominicreichl.com/llm/run-python', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

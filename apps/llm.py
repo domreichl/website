@@ -39,7 +39,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def welcome():
-    return "<p>Welcome to my app.</p>"
+    return "<p>The LLM app is running.</p>"
 
 
 @app.route("/run-python", methods=["POST"])
