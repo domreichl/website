@@ -1,0 +1,22 @@
+<div style="color: white;">
+    <form method="post">
+        <label>Select Name:</label><br>
+        {% for name in unique_names %}
+            <input type="radio" id="{{ name }}" name="name" value="{{ name }}" {% if name == selected_name %}checked{% endif %}>
+            <label for="{{ name }}">{{ name }}</label><br>
+        {% endfor %}
+        
+        <br>
+        <label>Select Criteria:</label><br>
+        <select id="criteria" name="criteria" multiple>
+            {% for criterion in unique_criteria %}
+                <option value="{{ criterion }}">{{ criterion }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <input type="submit" value="Filter">
+    </form>
+
+    <h2>Plot:</h2>
+    <div>{{ plot|safe }}</div>
+</div>
