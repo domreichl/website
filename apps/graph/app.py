@@ -9,31 +9,24 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     pr = pd.read_csv("predictions.csv")
-    unique_names = pr["Model"].unique()
-    unique_criteria = pr["ISIN"].unique()
+    models = pr["Model"].unique()
+    stocks = pr["ISIN"].unique()
 
-    selected_name = None
-    selected_criteria = request.form.getlist(
-        "criteria"
-    )  # Assuming you're adding a multi-select for criteria
+    selected_model = models[0]
+    selected_stock = stocks[0]
 
     if request.method == "POST":
-        selected_name = request.form.get("name")
-        # Filter the DataFrame based on the selected name
-        if selected_name:
-            pr = pr[pr["Model"] == selected_name]
+        if selected_model := request.form.get("Model"):
+            pr = pr[pr["Model"] == selected_model]
+        if selected_stock := request.form.get("ISIN"):
+            pr = pr[pr["ISIN"] == selected_stock]
 
-        # Further filter based on additional criteria (if applicable)
-        if selected_criteria:
-            pr = pr[pr["ISIN"].isin(selected_criteria)]
-
-    # Create a plot
     fig = go.Figure()
     fig.add_trace(
         go.Scatter(
             x=pr["Date"],
             y=pr["Price"],
-            name="actual",
+            name="recent",
             line=dict(color="navy", width=5),
         )
     )
@@ -41,23 +34,28 @@ def index():
         go.Scatter(
             x=pr["Date"],
             y=pr["PricePredicted"],
-            name="predicted",
+            name="forecast",
             line=dict(color="blueviolet", width=5),
         )
     )
     fig.update_traces(marker={"size": 12})
+    # TODO: display plot title with Company Name (!) based on ISIN
     fig.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font_color="white",
         yaxis_title="Price [€]",
         xaxis=dict(title="Date", tickformat="%b %d"),
+        margin=dict(l=80, r=80, t=20, b=80),
     )
 
-    # Render the plot and form
     return render_template(
         "template.html",
         plot=pio.to_html(fig, full_html=False),
-        unique_names=unique_names,
-        selected_name=selected_name,
-        unique_criteria=unique_criteria,
+        models=models,
+        stocks=stocks,
+        selected_model=selected_model,
+        selected_stock=selected_stock,
     )
 
 

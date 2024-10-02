@@ -1,22 +1,62 @@
-<div style="color: white;">
-    <form method="post">
-        <label>Select Name:</label><br>
-        {% for name in unique_names %}
-            <input type="radio" id="{{ name }}" name="name" value="{{ name }}" {% if name == selected_name %}checked{% endif %}>
-            <label for="{{ name }}">{{ name }}</label><br>
-        {% endfor %}
-        
-        <br>
-        <label>Select Criteria:</label><br>
-        <select id="criteria" name="criteria" multiple>
-            {% for criterion in unique_criteria %}
-                <option value="{{ criterion }}">{{ criterion }}</option>
-            {% endfor %}
-        </select><br><br>
-        
-        <input type="submit" value="Filter">
-    </form>
+<div style="color: white; font-family: 'Cabin', sans-serif; text-align: center;">
+    <style>
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: white;
+        }
 
-    <h2>Plot:</h2>
+        input[type="submit"] {
+            background-color: #9f0000ff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(214, 0, 0);
+            font-weight: bold;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between; /* Distribute space between items */
+        }
+
+        .flex-item {
+            width: 50%; /* Each item takes 50% of the width */
+            box-sizing: border-box; /* Ensures padding and border are included in the width */
+        }
+    </style>
+
+    <form method="post">
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>ISIN</h3>
+                <select id="stock" name="ISIN">
+                    {% for stock in stocks %}
+                        <option value="{{ stock }}" {% if stock == selected_stock %}selected{% endif %}>{{ stock }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="flex-item">
+                <h3>Model</h3>
+                <select id="model" name="Model">
+                    {% for model in models %}
+                        <option value="{{ model }}" {% if model == selected_model %}selected{% endif %}>{{ model }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <br><br>
+        <input type="submit" value="Generate Predictions">
+    </form>
     <div>{{ plot|safe }}</div>
 </div>
