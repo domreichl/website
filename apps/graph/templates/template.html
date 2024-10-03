@@ -27,12 +27,21 @@
 
         .flex-container {
             display: flex;
-            justify-content: space-between; /* Distribute space between items */
+            justify-content: space-between;
         }
 
         .flex-item {
-            width: 50%; /* Each item takes 50% of the width */
-            box-sizing: border-box; /* Ensures padding and border are included in the width */
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 512px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            .flex-item {
+                width: 100%;
+            }
         }
     </style>
 
