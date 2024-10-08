@@ -14,7 +14,6 @@ def run():
         config.SECURITIES,
         config.LBWS + config.FH,
     )
-
     predictor = Predictor(
         stock_data,
         dates["next_bdays"],
@@ -24,7 +23,6 @@ def run():
         config.MODELS_DIR,
         os.path.join(config.MODELS_DIR, "scaler.pkl"),
     )
-
     forecast = pd.concat(
         [predictor.generate_forecast(model_name) for model_name in config.MODELS],
         ignore_index=True,
