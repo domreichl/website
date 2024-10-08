@@ -35,9 +35,7 @@ class Predictor:
             returns = np.exp(
                 np.squeeze(self.scaler.inverse_transform(np.array(pred).reshape(-1, 1)))
             )
-            price = float(
-                self.data[self.data["ISIN"] == isin]["Close"].tolist()[-self.fh]
-            )
+            price = float(self.data[self.data["ISIN"] == isin]["Close"].tolist()[-1])
             for r in returns:
                 price *= r
                 price_col.append(round(price, 2))

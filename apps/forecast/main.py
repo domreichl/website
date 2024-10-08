@@ -14,6 +14,7 @@ def run():
         config.SECURITIES,
         config.LBWS + config.FH,
     )
+    recent_prices = stock_data[stock_data["Date"].isin(dates["prev_bdays"])]
     predictor = Predictor(
         stock_data,
         dates["next_bdays"],
@@ -28,6 +29,7 @@ def run():
         ignore_index=True,
     ).merge(stock_data[["ISIN", "Stock"]].drop_duplicates(), on="ISIN")
     forecast.to_csv("forecast.csv", index=False)
+    recent_prices.to_csv("recent_prices.csv", index=False)
 
 
 if __name__ == "__main__":
