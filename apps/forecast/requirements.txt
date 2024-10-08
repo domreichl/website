@@ -1,0 +1,12 @@
+joblib
+pandas
+numpy
+scikit-learn
+pmdarima
+sktime
+statsmodels
+tensorflow-cpu==2.13.0
+mlforecast==0.9.3
+lightgbm==4.1.0
+xgboost==2.0.0
+prophet==1.1.4
