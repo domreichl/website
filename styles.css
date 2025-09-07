@@ -331,10 +331,14 @@ th {
     .page-content {
         padding: 10% 5%;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        flex-direction: column;
         background-color: black;
         color: white;
+    }
+    
+    .info-item {
+        flex: none;
+        margin-bottom: 5%;
     }
 
     .app-content {

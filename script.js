@@ -18,39 +18,62 @@ function loadPage(pageUrl) {
 
 // Handle navigation and history state
 function navigate(pageUrl) {
-    loadPage(pageUrl);
+    loadPageWithFallback(pageUrl);
     history.pushState({ page: pageUrl }, '', pageUrl);  // Push the state to history
 }
 
-// Automatically load 'home.html' on initial load
+// Automatically load appropriate page on initial load
 window.onload = function() {
-    const pageUrl = location.pathname.split("/").pop() || 'home.html';
-
-    // Prevent reloading if the user is already on the home page
-    if (pageUrl === 'index.html' || pageUrl === '') {
-        loadPage('/home.html');
+    const currentPath = location.pathname;
+    let pageUrl;
+    
+    // Handle different URL patterns
+    if (currentPath === '/' || currentPath.endsWith('/index.html') || currentPath === '') {
+        pageUrl = '/home.html';
+    } else if (currentPath.endsWith('.html')) {
+        // Direct access to a page (e.g., /about.html, /pages/ml/stock_price_prediction.html)
+        pageUrl = currentPath;
     } else {
-        loadPage(pageUrl);
+        // Handle URLs without .html extension
+        pageUrl = currentPath.endsWith('/') ? currentPath + 'index.html' : currentPath + '.html';
     }
+    
+    // Load the appropriate page content
+    loadPageWithFallback(pageUrl);
     
     // Replace state for initial load so popstate works correctly
     history.replaceState({ page: pageUrl }, '', pageUrl);
 };
 
+// Enhanced page loading with fallback for missing pages
+function loadPageWithFallback(pageUrl) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', pageUrl, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                document.getElementById('content').innerHTML = xhr.responseText;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // Page not found, load home page as fallback
+                console.warn(`Page ${pageUrl} not found, loading home page`);
+                loadPage('/home.html');
+                // Update URL to reflect the actual loaded page
+                history.replaceState({ page: '/home.html' }, '', '/home.html');
+            }
+        }
+    };
+    xhr.send();
+}
+
 // Handle back/forward navigation (popstate event)
 window.onpopstate = function(event) {
     if (event.state && event.state.page) {
-        loadPage(event.state.page);  // Load the correct page content via AJAX
+        loadPageWithFallback(event.state.page);  // Load the correct page content via AJAX
     } else {
-        loadPage('/home.html');  // Default to home page if no state is present
+        loadPageWithFallback('/home.html');  // Default to home page if no state is present
     }
 };
-
-// Handle refresh
-window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
-    e.returnValue = '';
-});
 
 async function runPython() {
     const inputValue = document.getElementById('userInput').value;
